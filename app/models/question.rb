@@ -2,7 +2,7 @@ class Question < ActiveRecord::Base
     belongs_to :category
 
     def self.getQuestions
-    response_string = RestClient.get('https://opentdb.com/api.php?amount=3&type=boolean')
+    response_string = RestClient.get('https://opentdb.com/api.php?amount=50&type=boolean')
     response_hash = JSON.parse(response_string)
     questions = response_hash["results"].map do |question|
       diff = question["difficulty"]
