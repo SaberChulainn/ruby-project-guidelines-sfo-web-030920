@@ -14,14 +14,7 @@ class Question < ActiveRecord::Base
     # .find_or_create_by(category: )  
     questions.each {|q| Category.find_or_create_by(category: q[:cate]) }
     questions.map! do |q| 
-        Question.create(question: q[:ques], category_id: Category.find_by(category: q[:cate]).id , correct_answer: q[:ans], difficulty: q[:diff])
+        Question.find_or_create_by(question: q[:ques], category_id: Category.find_by(category: q[:cate]).id , correct_answer: q[:ans], difficulty: q[:diff])
     end
     end
-
-
 end
-
-# t.string "question"
-# t.string "difficulty"
-# t.boolean "correct_answer"
-# t.integer "category_id"
