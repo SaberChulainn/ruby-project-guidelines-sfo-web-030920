@@ -1,5 +1,17 @@
 require_relative '../config/environment'
 
 
-binding.pry
-puts "HELLO WORLD"
+puts "Welcome to Jeopardy!"
+flag = true
+startmessage = false
+puts "lol"
+# while flag != false
+#     if startmessage == false
+#         puts "Please enter your username, or simply type 'exit'!"
+#     end
+#     answer = gets.chomp!
+#     if answer.downcase == "exit"
+#         flag = false
+#     end
+
+
