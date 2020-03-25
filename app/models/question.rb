@@ -16,8 +16,6 @@ class Question < ActiveRecord::Base
     questions.map! do |q| 
         Question.create(question: q[:ques], category_id: Category.find_by(category: q[:cate]).id , correct_answer: q[:ans], difficulty: q[:diff])
     end
-    binding.pry
-    puts '.'
     end
 
 
