@@ -2,7 +2,7 @@ require_relative '../config/environment'
 
 
 puts "Welcome to Jeopardy!"
-Question.getQuestions()
+Question.get_questions()
 flag = true
 startmessage = false
 while flag != false

@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
     belongs_to :category
 
-    def self.getQuestions
+    def self.get_questions
     response_string = RestClient.get('https://opentdb.com/api.php?amount=50&type=boolean')
     response_hash = JSON.parse(response_string)
     questions = response_hash["results"].map do |question|
@@ -17,7 +17,6 @@ class Question < ActiveRecord::Base
         Question.create(question: q[:ques], category_id: Category.find_by(category: q[:cate]).id , correct_answer: q[:ans], difficulty: q[:diff])
     end
     end
-
 
 
 end
