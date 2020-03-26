@@ -4,15 +4,14 @@ class User < ActiveRecord::Base
   has_many :user_games
   has_many :games, through: :user_games
 
-  @count = 0
-  @correct_answer = 0
-  @incorrect_answer = 0
-
   def set_answer
-    puts "Write True or False to answer"
+    puts "Write True or False to answer or type exit to quit your current game!"
     answer = gets.chomp!
-    if answer == "true"
+    if answer.downcase == "true"
       answer = TRUE
+    elsif answer == "exit"
+      puts "Thank you for playing!"
+      answer = "exit"
     else
       answer = FALSE
     end
@@ -25,22 +24,23 @@ class User < ActiveRecord::Base
     puts "difficulty: #{ele[:difficulty]}"
   end
 
-  def print_scores
-    puts "Your current score its: #{@score}"
-    puts "Number of correct answers: #{@correct_answer}"
-    puts "Number of incorrect answers: #{@incorrect_answer}"
+  def print_scores(user_game)
+    puts "Your current score is: #{user_game.points}"
+    puts "Number of correct answers: #{user_game.correct_answers}"
+    puts "Number of incorrect answers: #{user_game.total_answers - user_game.correct_answers}"
+    puts "Number of total questions:#{user_game.total_answers}"
   end
 
   def run_questions(questions, user_game)
     i = 0
     while i < questions.length
       print_question(questions[i])
-      print questions[i][:correct_answer]
       answer = set_answer
-      binding.pry
       user_game.update(total_answers: user_game.total_answers + 1)
       if answer == questions[i][:correct_answer]
         user_game.update(points: user_game.points + 100, correct_answers: user_game.correct_answers + 1)
+      elsif answer == "exit"
+        return
       else
         user_game.update(points: user_game.points - 100)
       end
@@ -53,6 +53,7 @@ class User < ActiveRecord::Base
     game.initialize_game
     user_game = UserGame.create(user_id: self.id, game_id: game.id, points: 0, correct_answers: 0, total_answers: 0)
     run_questions(game.questions, user_game)
+    print_scores(user_game)
   end
 
   def get_points(name)

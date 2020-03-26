@@ -19,20 +19,4 @@ class Game < ActiveRecord::Base
     end 
     return self
   end
-
 end
-
-#We want it to basically have rows and colums
-#Get all category id's and sample them for which categories we will be giving
-#           Welcome to Jeopardy
-#   Category1     Category2      Category3
-#     Q$100         Q$100          Q$100
-#     Q$500         Q$500          Q$500
-#     Q$1000        Q$1000         Q$1000
-#
-# Basically in this diagram it will be 4 rows, 3 colums.
-# We don't use row 0 because that will be where the categories are stored
-#question[1][1], question[1][2], question[1][3]
-#question[2][1], question[2][2], question[2][3]
-#question[3][1], question[3][2], question[3][3]
-#
