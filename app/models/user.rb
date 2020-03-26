@@ -31,29 +31,28 @@ class User < ActiveRecord::Base
     puts "Number of incorrect answers: #{@incorrect_answer}"
   end
 
-  def run_questions(questions)
+  def run_questions(questions, user_game)
     i = 0
     while i < questions.length
       print_question(questions[i])
+      print questions[i][:correct_answer]
       answer = set_answer
+      binding.pry
+      user_game.update(total_answers: user_game.total_answers + 1)
       if answer == questions[i][:correct_answer]
-        @count += 100
-        @correct_answer += 1
+        user_game.update(points: user_game.points + 100, correct_answers: user_game.correct_answers + 1)
       else
-        @count -= 100
-        @incorrect_answer += 1
+        user_game.update(points: user_game.points - 100)
       end
       i += 1
     end
-    @count
   end
 
   def start_game
     game = Game.create()
     game.initialize_game
-    user_game = UserGame.create(user_id: self.id, game_id: game.id)
-    run_questions(game.questions)
-    user_game.update(points: @count, correct_answers: @correct_answer)
+    user_game = UserGame.create(user_id: self.id, game_id: game.id, points: 0, correct_answers: 0, total_answers: 0)
+    run_questions(game.questions, user_game)
   end
 
   def get_points(name)
