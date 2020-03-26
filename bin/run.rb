@@ -21,7 +21,7 @@ if answer.downcase == "exit"
     flag = false
 elsif startmessage == false
     name = answer
-    user = new_user(answer)
+    user = new_user(answer) # This is now our user object. It found or created it
     startmessage = true
     puts "Thank you #{name}! \n\nYou have these commands \n\nstart_game, show_points, exit"
 end
@@ -36,7 +36,7 @@ while flag != false
         points = user.get_points(name)
         print "\n\nYou have a total of #{points} points"
     elsif answer.downcase == "start_game"
-        print 'add game method here'
+        user.start_game
     end
         print default
 

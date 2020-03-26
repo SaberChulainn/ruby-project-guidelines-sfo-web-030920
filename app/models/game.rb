@@ -14,7 +14,6 @@ class Game < ActiveRecord::Base
       questions << Question.where(category: categories[i]).limit(3).uniq # try to get an array of questions now
       i += 1
     end
-    binding.pry
     questions.flatten.each do |q|
       GameQuestion.create(game_id: self.id, question_id: q.id)
     end 
