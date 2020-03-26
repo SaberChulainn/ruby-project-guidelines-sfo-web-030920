@@ -19,9 +19,8 @@ class User < ActiveRecord::Base
 
   def print_question(ele)
     puts "-----------------------------"
+    puts "difficulty: #{ele[:difficulty]}\n\n"
     puts "Question: #{ele[:question]}"
-    puts ""
-    puts "difficulty: #{ele[:difficulty]}"
   end
 
   def print_scores(user_game)
