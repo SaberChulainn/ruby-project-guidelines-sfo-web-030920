@@ -55,4 +55,10 @@ class User < ActiveRecord::Base
     run_questions(game.questions)
     user_game.update(points: @count, correct_answers: @correct_answer)
   end
+
+  def get_points(name)
+   id = User.find_by(name: name)
+   UserGame.where(user_id: id.id).sum(:points)
+   
+  end
 end

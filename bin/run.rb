@@ -4,6 +4,7 @@ require_relative '../config/environment'
 puts "Welcome to Jeopardy!"
 flag = true
 startmessage = false
+binding.pry
 puts "lol"
 # while flag != false
 #     if startmessage == false

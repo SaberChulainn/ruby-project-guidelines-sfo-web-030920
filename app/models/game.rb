@@ -17,7 +17,7 @@ class Game < ActiveRecord::Base
     binding.pry
     questions.flatten.each do |q|
       GameQuestion.create(game_id: self.id, question_id: q.id)
-    end
+    end 
     return self
   end
 
