@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
 
   def get_points(name)
    id = User.find_by(name: name)
-   UserGame.where(user_id: id.id).sum(:points)
-   
+   puts "Your total points are #{UserGame.where(user_id: id.id).sum(:points)}"
   end
+  
 end
