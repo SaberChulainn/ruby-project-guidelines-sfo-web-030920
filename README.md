@@ -12,6 +12,9 @@ Afterwards you are prompted to either type start_game, show_points, or exit
 
 You can look at your current points on your account, start a brand new game or quit the application.
 
+# Installation guide
+Just type in "Bundle Install"!
+
 # Playing the game
 
 You will be dealt a series of questions during the game.
