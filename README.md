@@ -37,4 +37,7 @@ Each question is worth 100 points! Make sure to answer it correctly, or else you
 
 You are able to end the current game as well by typing exit!
 
+# License and Contributer 
+License - https://github.com/SaberChulainn/ruby-project-guidelines-sfo-web-030920/blob/master/LICENSE
+Contributer guide - https://github.com/learn-co-students/ruby-project-guidelines-sfo-web-030920/blob/master/CONTRIBUTING.md
 # Hope you enjoy our project! Thanks for playing :)
