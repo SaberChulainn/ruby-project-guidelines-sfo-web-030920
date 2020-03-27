@@ -18,6 +18,8 @@ Required Materials
 * Git Tools
 
 
+You can clone or fork the project into your local repository
+
 Make sure to open up the folder and be at the main page where you can see folders such as db, and app.
 
 Type in Bundle install on the command line to install necessary files.
