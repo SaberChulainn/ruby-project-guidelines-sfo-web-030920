@@ -13,11 +13,16 @@ Afterwards you are prompted to either type start_game, show_points, or exit
 You can look at your current points on your account, start a brand new game or quit the application.
 
 # Installation guide and running the game
+Required Materials
+* Ruby 2.6
+* Git Tools
+
+
 Make sure to open up the folder and be at the main page where you can see folders such as db, and app.
 
-Type in Bundle install on the command line to install necessary files
+Type in Bundle install on the command line to install necessary files.
 
-Afterwards in order to start the game type ruby run.rb!
+Afterwards in order to start the game type " ruby run.rb " !
 
 
 # Playing the game
