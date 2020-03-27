@@ -1,37 +1,24 @@
-# Contributing to Learn.co Curriculum
+# Contributing to Trivia
 
-We're really excited that you're about to contribute to the [open curriculum](https://learn.co/content-license) on [Learn.co](https://learn.co). If this is your first time contributing, please continue reading to learn how to make the most meaningful and useful impact possible.
+Thanks for taking an interest in our small project. Here are the steps if you would like to contribute as well
 
-## Raising an Issue to Encourage a Contribution
+# Create a new Branch
 
-If you notice a problem with the curriculum that you believe needs improvement
-but you're unable to make the change yourself, you should raise a Github issue
-containing a clear description of the problem. Include relevant snippets of
-the content and/or screenshots if applicable. Curriculum owners regularly review
-issue lists and your issue will be prioritized and addressed as appropriate.
+Before making any changes please make a new branch with the name specify on what you want to change or add
+This will help ensure that we are able to know the commits that are being merged
+
+# Commits 
+
+Make sure commits are brief and a clear summary of what you have changed or wrote.
 
 ## Submitting a Pull Request to Suggest an Improvement
 
 If you see an opportunity for improvement and can make the change yourself go
 ahead and use a typical git workflow to make it happen:
 
-* Fork this curriculum repository
+* Fork this repository
 * Make the change on your fork, with descriptive commits in the standard format
 * Open a Pull Request against this repo
 
-A curriculum owner will review your change and approve or comment on it in due
-course.
+Either Ed or I will go through the pull to overview what would be merged.
 
-# Why Contribute?
-
-Curriculum on Learn is publicly and freely available under Learn's
-[Educational Content License](https://learn.co/content-license). By
-embracing an open-source contribution model, our goal is for the curriculum
-on Learn to become, in time, the best educational content the world has
-ever seen.
-
-We need help from the community of Learners to maintain and improve the
-educational content. Everything from fixing typos, to correcting
-out-dated information, to improving exposition, to adding better examples,
-to fixing tests—all contributions to making the curriculum more effective are
-welcome.
